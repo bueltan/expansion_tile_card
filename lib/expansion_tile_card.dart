@@ -32,6 +32,7 @@ class ExpansionTileCard extends StatefulWidget {
   /// be non-null.
   const ExpansionTileCard({
     Key? key,
+    this.visualDensity,
     this.leading,
     required this.title,
     this.subtitle,
@@ -59,6 +60,7 @@ class ExpansionTileCard extends StatefulWidget {
     this.animateTrailing = false,
   })  : assert(initiallyExpanded != null),
         super(key: key);
+  final VisualDensity ? visualDensity;
 
   final bool isThreeLine;
 
@@ -301,6 +303,7 @@ class ExpansionTileCardState extends State<ExpansionTileCard>
                   child: Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: ListTile(
+                      visualDensity: widget.visualDensity,
                       isThreeLine: widget.isThreeLine,
                       contentPadding: widget.contentPadding,
                       leading: widget.leading,
